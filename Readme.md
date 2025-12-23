@@ -172,6 +172,38 @@ Restaurar un archivo eliminado del proyecto (anteriormente no se hizo ningún co
   git restore [nombreArchivo.ext]
 ```
 
+Quitar commits..
+
+Pero dejar cambios staged → git reset --soft ...
+
+Pero dejar cambios unstaged → git reset --mixed ...
+
+Y cambios  → git reset --hard ...
+
+
+Ver el historial de movimientos 
+```bash
+  git reflog
+```
+
+Para volver 3 commits anteriores sin afectar los cambios de los archivos, es decir se mantengan con los nuevos cambios, sólo que volver o quitar los commits hechos en local. (En caso de querer volver al commit anterior (quitando sólo el último commit, sería HEAD~1))
+```bash
+  git reset --soft HEAD~3
+```
+
+Para volver al head antes del reset suponiendo que querías volver 2 commits anteriores en vez 3, pues vamos otra vez arriba y luego bajaríamos con el head~2
+```bash
+  git reset --soft HEAD@{1}
+```
+
+Podriamos hacerlo directamente sin subir, bajar poniendo el código del commit 
+
+```bash
+  git reset --soft <codigo_commit_como_HEAD>
+```
+
+
+
 <br></br>
 <h1 style="text-align: start;">AUTHORS ✒️</h1>
 
